@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { brand: { dark: '#0a0a0a', card: '#141414', accent: '#3b82f6', text: '#a1a1aa' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0a0a0a; color: #ffffff; }
+        .grid-bg { background-image: radial-gradient(#ffffff10 1px, transparent 1px); background-size: 40px 40px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-0 w-full z-50 p-6">
+        <div class="max-w-5xl mx-auto">
+            <a href="../index.html" class="text-sm font-medium text-brand-text hover:text-white transition flex items-center gap-2">
+                ← Volver al inicio
+            </a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 px-6 max-w-4xl mx-auto">
+        <span class="text-brand-accent font-mono text-sm">Fullstack Api</span>
+        <h1 class="text-4xl md:text-6xl font-bold mt-4 mb-8">Gestor de blog</h1>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-white/10">
+            <div>
+                <p class="text-xs uppercase tracking-widest text-brand-text mb-2">Rol</p>
+                <p class="text-sm font-semibold">Fullstack Developer</p>
+            </div>
+            <div>
+                <p class="text-xs uppercase tracking-widest text-brand-text mb-2">Stack</p>
+                <p class="text-sm font-semibold">Java, Spring Boot, Unit Testing, Spring Security, React</p>
+            </div>
+            <div>
+                <p class="text-xs uppercase tracking-widest text-brand-text mb-2">Duración</p>
+                <p class="text-sm font-semibold">4 Semanas</p>
+            </div>
+            <div>
+                <p class="text-xs uppercase tracking-widest text-brand-text mb-2">Despliegue</p>
+                <p class="text-sm font-semibold">Docker</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="px-6 max-w-5xl mx-auto mb-20">
+        <div class="aspect-video bg-brand-card rounded-3xl border border-white/10 flex items-center justify-center grid-bg overflow-hidden">
+            <img 
+                src="../assets/img/ApiPostN2.jpg" 
+                alt="Diagrama de Arquitectura C4 - Gestor de Blog" 
+                class="w-full h-full object-contain p-4 md:p-8 hover:scale-105 transition-transform duration-500"
+            >
+        </div>
+        <p class="text-center text-brand-text text-xs mt-4 italic">Diagrama de Contenedores (C4 Modelo - Nivel 2)</p>
+    </section>
+
+    <main class="px-6 max-w-3xl mx-auto space-y-16 pb-32">
+        
+        <section>
+            <h2 class="text-2xl font-bold mb-4">El Desafío</h2>
+            <p class="text-brand-text leading-relaxed">
+                Al tener que manejar usuarios y permisos de acceso para edición o eliminación de posts, tuve que controlar que un usuario no pueda eliminar o editar lo que otros usuarios publiquen, además de manejar del lado del servidor y del lado del cliente.
+            </p>
+        </section>
+
+        <section class="bg-brand-card p-8 rounded-2xl border border-white/10">
+            <h2 class="text-2xl font-bold mb-4 text-brand-accent">La Solución</h2>
+            <p class="text-brand-text leading-relaxed mb-6">
+                Del lado del servidor implementé un <strong>filtro personalizado</strong>. Se toma la petición del usuario, y se verifica que el autor del posts a editar/eliminar y la identidad del usuario a través de JWT coincida, si coincide la petición sigue el proceso, sino es denegado. Del lado del usuario, se realiza la misma comparación para habilitar el botón de eliminación y edición.
+            </p>
+            <ul class="list-disc list-inside text-brand-text space-y-2">
+                <li>Filtrado de roles y identidad de usuario.</li>
+                <li>Seguridad garantizada de posts.</li>
+                <li>Administrador es el unico capaz de editar y eliminar posts.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Resultados Técnicos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 border border-white/5 rounded-lg">
+                    <p class="text-3xl font-bold text-brand-accent">100%</p>
+                    <p class="text-xs uppercase text-brand-text">Seguridad de acceso a los posts.</p>
+                </div>
+                <div class="p-4 border border-white/5 rounded-lg">
+                    <p class="text-3xl font-bold text-brand-accent">100%</p>
+                    <p class="text-xs uppercase text-brand-text">Control al Administrador</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-20 border-t border-white/5 text-center">
+        <p class="text-brand-text mb-4">¿Te interesa el código de este proyecto?</p>
+        <a href="https://github.com/RodolfoRadaelli/API-blog" class="inline-block bg-white text-black px-6 py-2 rounded-full font-bold">Ver Repositorio</a>
+    </footer>
+
+</body>
+</html>
