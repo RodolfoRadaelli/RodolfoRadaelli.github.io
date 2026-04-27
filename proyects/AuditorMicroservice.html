@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Blog | Proyecto</title>
+    <title>Auditor de Logs | Case Study</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
@@ -38,9 +38,9 @@
                 ← Volver al inicio
             </a>
             <div class="flex gap-4">
-                <a href="#proceso" class="text-xs text-brand-text hover:text-brand-accent">Proceso</a>
-                <a href="#galeria" class="text-xs text-brand-text hover:text-brand-accent">Demo</a>
-                <a href="#stack" class="text-xs text-brand-text hover:text-brand-accent">Stack</a>
+                <a href="#proceso" class="text-xs text-brand-text hover:text-brand-accent transition">Proceso</a>
+                <a href="#galeria" class="text-xs text-brand-text hover:text-brand-accent transition">Demo</a>
+                <a href="#stack" class="text-xs text-brand-text hover:text-brand-accent transition">Stack</a>
             </div>
         </div>
     </nav>
@@ -48,10 +48,10 @@
     <header class="pt-40 pb-16 px-6 max-w-5xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div>
-                <span class="text-brand-accent font-mono text-sm tracking-tighter uppercase">Case Study: Fullstack System</span>
-                <h1 class="text-5xl md:text-7xl font-bold mt-2 tracking-tight">Gestor de Blog</h1>
+                <span class="text-brand-accent font-mono text-sm tracking-tighter uppercase">Case Study: Event-Driven System</span>
+                <h1 class="text-5xl md:text-7xl font-bold mt-2 tracking-tight">Auditor de Logs</h1>
             </div>
-            <a href="https://github.com/RodolfoRadaelli/API-blog" target="_blank" class="bg-white text-black px-5 py-2.5 rounded-full text-sm font-bold hover:bg-brand-accent hover:text-white transition-all">
+            <a href="https://github.com/RodolfoRadaelli/AuditorMicroservice" target="_blank" class="bg-white text-black px-5 py-2.5 rounded-full text-sm font-bold hover:bg-brand-accent hover:text-white transition-all">
                 Ver Código en GitHub
             </a>
         </div>
@@ -59,20 +59,20 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 py-8 border-y border-brand-border">
             <div>
                 <p class="text-[10px] uppercase tracking-[0.2em] text-brand-text mb-2">Rol Principal</p>
-                <p class="text-sm font-medium">Fullstack developer</p>
+                <p class="text-sm font-medium">Backend Developer</p>
             </div>
             <div>
                 <p class="text-[10px] uppercase tracking-[0.2em] text-brand-text mb-2">Core Stack</p>
-                <p class="text-sm font-medium">Spring Boot & React</p>
+                <p class="text-sm font-medium">Spring Boot & RabbitMQ</p>
             </div>
             <div>
                 <p class="text-[10px] uppercase tracking-[0.2em] text-brand-text mb-2">Arquitectura</p>
-                <p class="text-sm font-medium">Rest API / Monolito</p>
+                <p class="text-sm font-medium">Microservicios / EDA</p>
             </div>
             <div>
                 <p class="text-[10px] uppercase tracking-[0.2em] text-brand-text mb-2">Estado</p>
                 <p class="text-sm font-medium flex items-center gap-2">
-                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Completado
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> MVP Completado
                 </p>
             </div>
         </div>
@@ -82,40 +82,40 @@
         
         <section class="space-y-6">
             <div class="aspect-video bg-brand-card rounded-3xl border border-brand-border flex items-center justify-center grid-bg overflow-hidden group">
-                <img src="../assets/img/ApiPostN2.jpg" alt="Arquitectura C4" class="w-full h-full object-contain p-8 group-hover:scale-[1.02] transition-transform duration-700">
+                <img src="../assets/img/C2Auditor.jpg" alt="Arquitectura C4" class="w-full h-full object-contain p-8 group-hover:scale-[1.02] transition-transform duration-700">
             </div>
             <div class="flex justify-between items-start">
                 <p class="text-brand-text text-xs italic">Visualización de Arquitectura Nivel 2 (C4 Model)</p>
                 <div class="max-w-md text-right">
-                    <p class="text-sm text-brand-text">Diseño orientado a la separación de responsabilidades, garantizando que el flujo de datos sea seguro desde la persistencia hasta el cliente final.</p>
+                    <p class="text-sm text-brand-text">Diseño orientado a la comunicación basada en eventos, garantizando el desacoplamiento total entre el emisor y el receptor.</p>
                 </div>
             </div>
         </section>
 
         <section id="proceso" class="grid md:grid-cols-2 gap-16 items-start">
             <div class="space-y-6">
-                <h2 class="text-3xl font-bold tracking-tight">El Desafío <br><span class="text-brand-text font-normal text-xl text-brand-accent">Seguridad y Propiedad de Datos</span></h2>
+                <h2 class="text-3xl font-bold tracking-tight">El Desafío <br><span class="text-brand-text font-normal text-xl text-brand-accent">Comunicación Asíncrona y Resiliencia</span></h2>
                 <p class="text-brand-text leading-relaxed text-lg">
-                    El problema central no era solo crear un CRUD, sino implementar una lógica para asegurar que un usuario autenticado no pudiera manipular recursos de otros, manteniendo la integridad del sistema sin comprometer la experiencia de usuario.
+                    El reto principal consistió en implementar un sistema de mensajería que permitiera al servicio emisor delegar la carga de logs sin bloquear su flujo principal. Era fundamental asegurar que el sistema fuera resiliente: si el consumidor no está disponible, los eventos deben persistir en el broker hasta su procesamiento.
                 </p>
             </div>
             <div class="bg-brand-card p-8 rounded-3xl border border-brand-border space-y-4">
                 <h3 class="text-lg font-bold text-white">Implementación Técnica</h3>
                 <p class="text-brand-text text-sm leading-relaxed">
-                    Desarrollé un <strong>Custom Security Filter</strong> que intercepta las peticiones `PUT/DELETE`. El flujo funciona así:
+                    Configuré la infraestructura de mensajería mediante <strong>Queue, Exchange y Bindings</strong> para establecer un flujo de datos robusto:
                 </p>
                 <ol class="space-y-4 text-sm text-brand-text">
                     <li class="flex gap-3">
                         <span class="text-brand-accent font-mono">01.</span>
-                        <span>Extracción del <strong>Subject</strong> desde el JWT Token.</span>
+                        <span>Definición de infraestructura de mensajería y serialización JSON en el servicio consumidor.</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="text-brand-accent font-mono">02.</span>
-                        <span>Validación cruzada entre el ID del autor del Post y el ID del usuario en sesión.</span>
+                        <span>Uso de <strong>RabbitTemplate</strong> para la publicación eficiente de eventos desde el productor.</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="text-brand-accent font-mono">03.</span>
-                        <span>Bypass total otorgado únicamente al rol <strong>ADMIN</strong> para moderación.</span>
+                        <span>Implementación de un <strong>Listener asíncrono</strong> para el procesamiento y persistencia en MongoDB al recibir mensajes.</span>
                     </li>
                 </ol>
             </div>
@@ -124,26 +124,26 @@
         <section id="galeria" class="space-y-12">
             <div class="text-center">
                 <h2 class="text-3xl font-bold">Funcionamiento del Sistema</h2>
-                <p class="text-brand-text mt-2">Un recorrido visual por la interfaz y sus capacidades.</p>
+                <p class="text-brand-text mt-2">Pruebas de integración y monitoreo de flujos asíncronos.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="group relative bg-brand-card border border-brand-border rounded-2xl overflow-hidden">
                     <div class="aspect-video overflow-hidden">
-                        <img src="../assets/img/LoginForm.png" alt="Login Flow" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="../assets/img/RabbitAuditor.png" alt="RabbitMQ Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
-                        <h4 class="font-bold mb-1">Gestión de Sesión</h4>
-                        <p class="text-xs text-brand-text">Implementación de JWT con persistencia en LocalStorage y manejo de estados globales en React.</p>
+                        <h4 class="font-bold mb-1">Gestión de Mensajería</h4>
+                        <p class="text-xs text-brand-text">Monitoreo de colas y tráfico de eventos mediante el panel administrativo de RabbitMQ.</p>
                     </div>
                 </div>
                 <div class="group relative bg-brand-card border border-brand-border rounded-2xl overflow-hidden">
                     <div class="aspect-video overflow-hidden">
-                        <img src="../assets/img/ListPosts.png" alt="Editor Flow" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="../assets/img/SwaggerAuditor.jpg" alt="Swagger UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
-                        <h4 class="font-bold mb-1">Control Dinámico de UI</h4>
-                        <p class="text-xs text-brand-text">Botones de edición ocultos mediante lógica condicional que espeja la seguridad del Backend.</p>
+                        <h4 class="font-bold mb-1">Documentación con Swagger</h4>
+                        <p class="text-xs text-brand-text">Interfaz interactiva para realizar pruebas rápidas y documentar los endpoints de los microservicios.</p>
                     </div>
                 </div>
             </div>
@@ -156,22 +156,22 @@
                     <div class="w-10 h-10 bg-brand-accent/10 rounded-lg flex items-center justify-center mb-4 text-brand-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                     </div>
-                    <h3 class="font-bold mb-2">Spring Boot</h3>
-                    <p class="text-xs text-brand-text leading-relaxed">Uso de Spring Security para el filtrado de JWT y Spring Data JPA para la gestión eficiente de la DB.</p>
+                    <h3 class="font-bold mb-2">Spring Boot & MongoDB</h3>
+                    <p class="text-xs text-brand-text leading-relaxed">Integración con Spring Data para la gestión de persistencia no relacional y auditoría escalable de logs.</p>
                 </div>
                 <div class="p-6 bg-brand-card border border-brand-border rounded-xl">
                     <div class="w-10 h-10 bg-brand-accent/10 rounded-lg flex items-center justify-center mb-4 text-brand-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h3 class="font-bold mb-2">Testing</h3>
-                    <p class="text-xs text-brand-text leading-relaxed">Pruebas unitarias con JUnit 5 y Mockito para asegurar que la lógica de permisos no falle ante cambios.</p>
+                    <h3 class="font-bold mb-2">RabbitMQ</h3>
+                    <p class="text-xs text-brand-text leading-relaxed">Orquestación de eventos asíncronos para garantizar el desacoplamiento total y la tolerancia a fallos entre servicios.</p>
                 </div>
                 <div class="p-6 bg-brand-card border border-brand-border rounded-xl">
                     <div class="w-10 h-10 bg-brand-accent/10 rounded-lg flex items-center justify-center mb-4 text-brand-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                     </div>
                     <h3 class="font-bold mb-2">Dockerization</h3>
-                    <p class="text-xs text-brand-text leading-relaxed">Contenerización de la app y la DB para garantizar un despliegue consistente en cualquier entorno.</p>
+                    <p class="text-xs text-brand-text leading-relaxed">Contenerización completa del ecosistema (App, Broker y DB) para asegurar portabilidad y consistencia.</p>
                 </div>
             </div>
         </section>
@@ -180,7 +180,7 @@
 
     <footer class="py-20 border-t border-brand-border text-center bg-brand-card/30">
         <div class="flex justify-center gap-4">
-            <a href="https://github.com/RodolfoRadaelli" class="text-sm font-semibold hover:text-brand-accent transition">GitHub</a>
+            <a href="https://github.com/RodolfoRadaelli" class="text-sm font-semibold hover:text-brand-accent transition">Ver Perfil de GitHub</a>
         </div>
     </footer>
 
