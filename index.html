@@ -56,26 +56,48 @@
     </header>
 
     <section id="proyectos" class="py-20 px-6 max-w-5xl mx-auto">
-        <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-brand-text mb-12">Proyecto Destacado</h2>
-        <div class="glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 gap-8 items-center group">
-            <div class="p-8">
-                <h3 class="text-2xl font-bold mb-4">API Blog</h3>
-                <p class="text-brand-text mb-6">Una API Rest que gestiona los posts de un blog. Están almacenados en una base de datos en memoria (h2) y la api es consumida por un frontend hecho en React.</p>
-                <div class="flex flex-wrap gap-2 mb-8">
-                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">Spring Boot</span>
-                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">Unit Testing</span>
-                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">Spring security</span>
-                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">React</span>
-                    <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">Docker</span>
+        <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-brand-text mb-12">Proyectos Destacados</h2>
+        
+        <div class="space-y-16"> <div class="glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 items-stretch group">
+                <div class="p-8 md:p-12 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold mb-4">API Blog</h3>
+                    <p class="text-brand-text mb-6 leading-relaxed">Una API Rest que gestiona los posts de un blog. Están almacenados en una base de datos en memoria (h2) y la api es consumida por un frontend hecho en React.</p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">Spring Boot</span>
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">Unit Testing</span>
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">Spring security</span>
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">React</span>
+                    </div>
+                    <a href="proyects/ApiBlog.html" class="text-brand-accent font-bold hover:underline inline-flex items-center gap-2 w-fit">
+                        Ver detalle del proyecto 
+                        <span class="transform transition-transform group-hover:translate-x-1">→</span>
+                    </a>
                 </div>
-                <a href="proyects/ApiBlog.html" class="text-brand-accent font-bold hover:underline flex items-center gap-2">
-                    Ver detalle del proyecto 
-                    <span class="transform transition-transform group-hover:translate-x-1">→</span>
-                </a>
+                <div class="bg-white/5 border-l border-white/5 overflow-hidden min-h-[300px]">
+                    <img src="assets/img/ApiBlogPreview.jpg" alt="API Blog Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                </div>
             </div>
-            <a href="proyects/ApiBlog.html" class="block bg-white/5 h-64 md:h-full flex items-center justify-center border-l border-white/5 cursor-pointer hover:bg-white/10 transition overflow-hidden">
-    		<img src="assets/img/ApiBlogPreview.jpg" alt="API Blog Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
-	    </a>
+
+            <div class="glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 items-stretch group">
+                <div class="bg-white/5 border-r border-white/5 overflow-hidden min-h-[300px] order-last md:order-first">
+                    <img src="assets/img/SwaggerAuditor.jpg" alt="Auditor Microservice Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                </div>
+                <div class="p-8 md:p-12 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold mb-4">Auditor Microservice</h3>
+                    <p class="text-brand-text mb-6 leading-relaxed">Arquitectura de microservicios distribuida. Un servicio emisor de eventos y un receptor encargado del procesamiento de logs y persistencia en base de datos NoSQL.</p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">RabbitMQ</span>
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">Spring Boot</span>
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">MongoDB</span>
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full border border-white/10">Docker</span>
+                    </div>
+                    <a href="proyects/AuditorMicroservice.html" class="text-brand-accent font-bold hover:underline inline-flex items-center gap-2 w-fit">
+                        Ver detalle del proyecto 
+                        <span class="transform transition-transform group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -85,7 +107,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="glass-card p-6 rounded-xl">
                     <h4 class="font-bold mb-2">Backend Core</h4>
-                    <p class="text-sm text-brand-text">Java 17+, Spring Framework, Spring Security, JPA/Hibernate.</p>
+                    <p class="text-sm text-brand-text">Java 17+, Spring Framework, Spring Security, JPA/Hibernate. RabbitMQ.</p>
                 </div>
                 <div class="glass-card p-6 rounded-xl">
                     <h4 class="font-bold mb-2">Infraestructura</h4>
@@ -93,7 +115,7 @@
                 </div>
                 <div class="glass-card p-6 rounded-xl">
                     <h4 class="font-bold mb-2">Data & Testing</h4>
-                    <p class="text-sm text-brand-text">MySQL, MongoDB, JUnit 5, Mockito.</p>
+                    <p class="text-sm text-brand-text">MySQL, MongoDB, JUnit 5, Mockito. Swagger.</p>
                 </div>
             </div>
         </div>
